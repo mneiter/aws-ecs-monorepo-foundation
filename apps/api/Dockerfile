@@ -9,11 +9,13 @@ RUN npm ci
 
 FROM deps AS build
 RUN npx nx build api --configuration=production
+RUN npm prune --omit=dev
 
 FROM node:22-alpine AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
 
+COPY --from=build /workspace/node_modules ./node_modules
 COPY --from=build /workspace/dist/apps/api ./
 
 EXPOSE 3000
