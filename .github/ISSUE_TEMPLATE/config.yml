@@ -3,3 +3,6 @@ contact_links:
   - name: Ask a question
     url: https://github.com/mneiter/aws-ecs-monorepo-foundation/discussions/new?category=q-a
     about: Ask the community for help
+  - name: Report a security vulnerability / private report
+    url: https://github.com/mneiter/aws-ecs-monorepo-foundation/security/advisories/new
+    about: Private reporting channel for security (and sensitive governance) reports

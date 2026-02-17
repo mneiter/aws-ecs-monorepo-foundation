@@ -37,7 +37,6 @@ terraform.rc
 
 # Docker
 docker-compose.override.yml
-.dockerignore
 
 # IDE - strict
 .idea/
@@ -55,9 +54,11 @@ Desktop.ini
 
 # Secrets
 .env
-
-# Vitest / coverage artifacts
-coverage/
+.env.*
+.env.local
+.env.*.local
+!.env.example
+!.env.template
 
 # Agentic artifacts
 .agent/

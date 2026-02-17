@@ -37,7 +37,13 @@ This repository serves as a learning and reference implementation for:
 
 ## Local Development
 
+This repository is intentionally governance-first and may not include an Nx workspace in every revision.
+
+### Once an Nx workspace exists
 ```bash
 npm ci
-nx serve web
-nx serve api
+npx nx serve web
+npx nx serve api
+```
+
+See: [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
