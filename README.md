@@ -13,6 +13,13 @@ Implemented in `feat/ecs-nx-foundation`:
 - Dockerfiles for local image build and runtime checks
 - Terraform foundation for VPC, ALB path routing, ECS/Fargate services, ECR, CloudWatch logs, and autoscaling
 
+## Start Here
+
+1. Read the architecture baseline in [docs/architecture foundation.md](docs/architecture%20foundation.md).
+2. Read foundation boundaries in [docs/foundation scope.md](docs/foundation%20scope.md).
+3. Read phase tracking in [docs/program/PROJECT_PROGRAM.md](docs/program/PROJECT_PROGRAM.md).
+4. Read implementation plan details in [docs/program/CODEX_PLAN_NX_ECS_FARGATE_FOUNDATION.md](docs/program/CODEX_PLAN_NX_ECS_FARGATE_FOUNDATION.md).
+
 ## Repository Layout
 
 - `apps/web`: Next.js static export app
@@ -64,6 +71,12 @@ npm run build
 npm run test
 npm run lint
 npm run typecheck
+```
+
+If Nx reports plugin worker or daemon socket errors in WSL/sandboxed environments, run commands with:
+
+```bash
+NX_DAEMON=false NX_ISOLATE_PLUGINS=false <your-command>
 ```
 
 ## Docker
@@ -176,6 +189,12 @@ terraform init
 terraform fmt -check
 terraform validate
 terraform plan -var-file=terraform.tfvars
+```
+
+If Nx plugin worker startup fails in your environment, re-run Nx commands with:
+
+```bash
+NX_DAEMON=false NX_ISOLATE_PLUGINS=false
 ```
 
 Optional post-apply checks:
