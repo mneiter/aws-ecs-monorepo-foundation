@@ -1,0 +1,98 @@
+name: Bug report
+description: Report a defect or regression
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail to reproduce it.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened and what did you expect to happen?
+      placeholder: "When I run..., I see..., but expected..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      description: Provide exact steps to reproduce.
+      placeholder: |
+        1) ...
+        2) ...
+        3) ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Include logs or screenshots if relevant.
+      placeholder: "Actual output, stack trace, logs..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: "Expected output..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Provide version info.
+      placeholder: |
+        OS:
+        Node:
+        Nx:
+        Terraform:
+        AWS region:
+        Git commit SHA:
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - web (Next.js)
+        - api (TypeScript service)
+        - infra (Terraform)
+        - ci (GitHub Actions)
+        - docs
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: If you found a temporary workaround, describe it here.
+      placeholder: "Workaround..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre submit checks
+      options:
+        - label: I searched existing issues
+          required: true
+        - label: I included reproduction steps
+          required: true
+        - label: I confirmed no secrets are included in logs or screenshots
+          required: true
