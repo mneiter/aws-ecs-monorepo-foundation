@@ -1,81 +1,85 @@
 # Contributing to aws-ecs-monorepo-foundation
 
-This guide outlines the standards and workflows for contributing to this production-oriented foundation repository.
+This guide outlines contribution standards for this repository.
 
-## 🚀 Quick Start (Running Locally)
+## Quick Start (Running Locally)
 
-1.  **Install Prerequisites**:
-    *   Node.js (LTS)
-    *   Docker Desktop
-    *   Terraform CLI
+1. Install prerequisites:
+   - Node.js (LTS)
+   - Docker Desktop
+   - Terraform CLI
 
-2.  **Install Dependencies**:
-    If/when this repository includes an Nx workspace (`package.json`, `nx.json`), install dependencies with:
-    ```bash
-    npm ci
-    ```
+2. Install dependencies:
 
-3.  **Run Applications**:
-    If/when this repository includes runnable apps, you can start them with:
-    ```bash
-    npx nx serve web  # Frontend
-    npx nx serve api  # Backend
-    ```
+```bash
+npm install
+```
 
-## 🔒 Security & Secrets Policy
+3. Run applications:
 
-*   **NO SECRETS IN GIT**. Never commit `.env` files or hardcoded credentials.
-*   **Local Development**: Use `.env.local` (git-ignored) for local secrets.
-*   **Production**: Secrets must be injected via AWS Secrets Manager or SSM Parameter Store at runtime.
-*   **Detection**: Pre-commit hooks (if configured) or CI will fail if secrets are detected.
+```bash
+npx nx serve api
+npx nx dev web
+```
 
-## 🛠 Standards
+4. Validate changes:
+
+```bash
+npm run build
+npm run test
+npm run lint
+npm run typecheck
+```
+
+## Security and Secrets Policy
+
+- Do not commit secrets or credentials.
+- Use local env files for local-only values.
+- Inject production secrets at runtime via AWS Secrets Manager or SSM Parameter Store.
+
+## Standards
 
 ### Branching Strategy
-*   `feat/<scope>`: New features (e.g., `feat/auth-module`)
-*   `fix/<issue>`: Bug fixes (e.g., `fix/login-error`)
-*   `chore/<task>`: Maintenance (e.g., `chore/dependency-update`)
-*   `docs/<topic>`: Documentation updates
+
+- `feat/<scope>` for features
+- `fix/<scope>` for bug fixes
+- `chore/<scope>` for maintenance
+- `docs/<scope>` for documentation
 
 ### Commit Messages
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
-*   `feat: add user login`
-*   `fix: resolve race condition in api`
-*   `chore: update nx to 18`
 
-### Versioning
-*   **Libraries**: Semantic Versioning (SemVer) `v1.0.0`.
-*   **Applications**: Incrementing tags based on deployment `app-v1.0.0`.
-*   **Docker Images**: Tagged with Git SHA commit hash + SemVer tag if applicable.
+Use Conventional Commits, for example:
 
-### Terraform
-*   **Naming**: `resource_type.snake_case_name` (e.g., `aws_s3_bucket.app_logs`).
-*   **State**: Remote state in S3 + DynamoDB locking (do not use local state).
-*   **Tagging**: All resources must have `Project`, `Environment`, and `Owner` tags.
+- `feat: add api health endpoint`
+- `fix: correct alb listener rule`
+- `chore: update terraform variables`
 
 ### Pull Requests
-1.  Target `main` branch.
-2.  Fill out the **Pull Request Template** completely.
-3.  Self-review your code before requesting review.
-4.  Ensure all CI checks pass.
 
-## 🧰 Maintainers: GitHub Repository Settings Checklist
+1. Target `main`.
+2. Complete `.github/pull_request_template.md`.
+3. Include verification commands and outcomes.
+4. Keep scope minimal and focused.
 
-Note: required status checks can only be selected after workflows exist and have run at least once.
+## Maintainers: GitHub Repository Settings Checklist
+
+Required status checks can only be selected after workflows exist and have run at least once.
 
 ### Phase 1 (now)
-* Require a pull request before merging
-* Require approvals (recommended: at least 1)
-* Require review from Code Owners
-* Require conversation resolution before merging
-* Restrict force pushes
-* Restrict branch deletions
 
-### Phase 2 (later, once CI exists)
-* Add required status checks after CI workflows are added and have run at least once
+- Require pull requests before merging.
+- Require at least one approval.
+- Require review from Code Owners.
+- Require conversation resolution.
+- Restrict force pushes.
+- Restrict branch deletions.
 
-## ❓ Support / Questions
+### Phase 2 (after CI workflows exist)
 
-Use GitHub Discussions for questions and support:
+- Add required status checks.
 
-* https://github.com/mneiter/aws-ecs-monorepo-foundation/discussions/new?category=q-a
+## Support / Questions
+
+Use GitHub Discussions:
+
+- https://github.com/mneiter/aws-ecs-monorepo-foundation/discussions/new?category=q-a

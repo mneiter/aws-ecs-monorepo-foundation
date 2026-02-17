@@ -1,0 +1,27 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background: #f5f7fa;
+  color: #0f172a;
+}
+
+main {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+pre {
+  padding: 1rem;
+  background: #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: auto;
+}
