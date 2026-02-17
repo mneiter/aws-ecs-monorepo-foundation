@@ -12,58 +12,43 @@ pnpm-debug.log*
 .nx/
 dist/
 tmp/
-out/
-.storybook-out/
 coverage/
-.nyc_output/
-.eslintcache
 
 # Next.js
 .next/
-next-env.d.ts
+out/
+build/
 
 # TypeScript
 *.tsbuildinfo
 
-# Env files
-.env
-.env.*
-!.env.example
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+.terraformrc
+terraform.rc
+# Explicitly allow lock file
+!.terraform.lock.hcl
 
-# Logs
-logs/
-*.log
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# IDE - strict
+.idea/
+.vscode/
+!.vscode/extensions.json
 
 # OS
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# IDE
-.vscode/
-!.vscode/extensions.json
-!.vscode/settings.json
-.idea/
-
-# Terraform
-**/.terraform/
-**/.terraform.lock.hcl
-*.tfstate
-*.tfstate.*
-crash.log
-crash.*.log
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-.terraformrc
-terraform.rc
-
-# Terraform vars, keep templates only
-*.tfvars
-*.tfvars.json
-!*.example.tfvars
-!*.example.tfvars.json
+ehthumbs.db
+Desktop.ini
 
 # Docker
 **/*-docker.env

@@ -1,94 +1,24 @@
-name: Feature request
-description: Suggest an improvement or new capability
-title: "feat: "
+name: ✨ Feature Request
+description: Suggest an idea for this project
+title: "[Feat]: "
 labels: ["enhancement"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for the idea. Please describe the problem first, then the proposed solution.
-
   - type: textarea
     id: problem
     attributes:
-      label: Problem statement
-      description: What problem are we trying to solve?
-      placeholder: "As a user, I want..., so that..."
+      label: Is your feature request related to a problem? Please describe.
+      description: A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
     validations:
       required: true
-
   - type: textarea
-    id: proposal
+    id: solution
     attributes:
-      label: Proposed solution
-      description: What do you propose to build or change?
-      placeholder: "Proposed approach..."
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen.
     validations:
       required: true
-
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives considered
-      description: What alternatives did you consider?
-      placeholder: "Alternative approaches..."
-    validations:
-      required: false
-
-  - type: textarea
-    id: scope
-    attributes:
-      label: Scope
-      description: What is in scope and what is explicitly out of scope?
-      placeholder: |
-        In scope:
-        Out of scope:
-    validations:
-      required: false
-
-  - type: dropdown
-    id: area
-    attributes:
-      label: Area
-      options:
-        - web (Next.js)
-        - api (TypeScript service)
-        - infra (Terraform)
-        - ci (GitHub Actions)
-        - docs
-        - other
-    validations:
-      required: true
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      options:
-        - P0 (urgent)
-        - P1 (high)
-        - P2 (normal)
-        - P3 (low)
-    validations:
-      required: true
-
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: Acceptance criteria
-      description: What does done look like?
-      placeholder: |
-        - [ ] ...
-        - [ ] ...
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: checks
-    attributes:
-      label: Pre submit checks
-      options:
-        - label: I searched existing issues
-          required: true
-        - label: I described the problem, not only the solution
-          required: true
+      label: Describe alternatives you've considered
+      description: A clear and concise description of any alternative solutions or features you've considered.

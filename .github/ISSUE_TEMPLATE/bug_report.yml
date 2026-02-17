@@ -1,98 +1,46 @@
-name: Bug report
-description: Report a defect or regression
-title: "bug: "
-labels: ["bug"]
+name: 🐛 Bug Report
+description: Create a report to help us improve
+title: "[Bug]: "
+labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a bug. Please include enough detail to reproduce it.
-
+        Thanks for taking the time to fill out this bug report!
   - type: textarea
-    id: summary
+    id: what-happened
     attributes:
-      label: Summary
-      description: What happened and what did you expect to happen?
-      placeholder: "When I run..., I see..., but expected..."
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
     validations:
       required: true
-
   - type: textarea
-    id: repro
+    id: reproduction
     attributes:
-      label: Reproduction steps
-      description: Provide exact steps to reproduce.
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior.
       placeholder: |
-        1) ...
-        2) ...
-        3) ...
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
     validations:
       required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behavior
-      description: What actually happened? Include logs or screenshots if relevant.
-      placeholder: "Actual output, stack trace, logs..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-      description: What did you expect to happen?
-      placeholder: "Expected output..."
-    validations:
-      required: true
-
-  - type: textarea
-    id: env
-    attributes:
-      label: Environment
-      description: Provide version info.
-      placeholder: |
-        OS:
-        Node:
-        Nx:
-        Terraform:
-        AWS region:
-        Git commit SHA:
-    validations:
-      required: true
-
   - type: dropdown
-    id: area
+    id: risk
     attributes:
-      label: Area
+      label: Severity
       options:
-        - web (Next.js)
-        - api (TypeScript service)
-        - infra (Terraform)
-        - ci (GitHub Actions)
-        - docs
-        - other
+        - Critical (Production Down)
+        - High (Feature Broken)
+        - Medium (Workaround Available)
+        - Low (Cosmetic/Minor)
     validations:
       required: true
-
   - type: textarea
-    id: workaround
+    id: logs
     attributes:
-      label: Workaround
-      description: If you found a temporary workaround, describe it here.
-      placeholder: "Workaround..."
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: checks
-    attributes:
-      label: Pre submit checks
-      options:
-        - label: I searched existing issues
-          required: true
-        - label: I included reproduction steps
-          required: true
-        - label: I confirmed no secrets are included in logs or screenshots
-          required: true
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell

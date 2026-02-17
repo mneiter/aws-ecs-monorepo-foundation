@@ -1,32 +1,27 @@
+# PR Description
+
 ## Summary
-What does this PR change?
+<!-- Explain the **what** and **why** of this change. Link to ticket if applicable. -->
 
-## Why
-Why is this change needed? What problem does it solve?
+## Type of Change
+<!-- Check strictly one option -->
+- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
+- [ ] ✨ New feature (non-breaking change which adds functionality)
+- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] 📝 Documentation update
+- [ ] ♻️  Refactor (no functional changes)
+- [ ] 🏗️ Build/CI/Infra changes
 
-## How
-High level approach and key implementation details.
+## Risk Assessment
+<!-- MUST BE FILLED. Select one. -->
+- [ ] **Low**: Trivial UI change, doc update, or test-only change.
+- [ ] **Medium**: Standard feature or bugfix. Verification needed but unlikely to break prod.
+- [ ] **High**: Database schema change, core infrastructure, auth logic, or breaking API change.
 
-## Verification
-Exact commands to run locally or in CI to verify the change.
+## Screenshots / Recordings
+<!-- REQUIRED for UI changes. Delete if backend/infra only. -->
 
-- [ ] npm ci
-- [ ] nx format:check
-- [ ] nx lint
-- [ ] nx test
-- [ ] nx build web
-- [ ] nx build api
-- [ ] docker build -f apps/web/Dockerfile -t web .
-- [ ] docker build -f apps/api/Dockerfile -t api .
-- [ ] terraform fmt -check (if infra changed)
-- [ ] terraform validate (if infra changed)
-
-## Checklist
-- [ ] Scope is minimal and focused
-- [ ] No secrets or credentials added
-- [ ] Docs updated if needed
-- [ ] Tests added or updated if behavior changed
-- [ ] Verification commands listed above were executed (only check if actually run)
-
-## Notes
-Anything reviewers should pay attention to (tradeoffs, follow ups, risks).
+## Verification Plan
+<!-- Exact steps to verify this PR. If this section is empty, the PR should be rejected. -->
+1.  Run `nx run-many -t test`
+2.  ...
