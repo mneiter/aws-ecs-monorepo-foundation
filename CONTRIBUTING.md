@@ -7,17 +7,19 @@ This guide outlines the standards and workflows for contributing to this product
 1.  **Install Prerequisites**:
     *   Node.js (LTS)
     *   Docker Desktop
-    *   Terraform coverage
+    *   Terraform CLI
 
 2.  **Install Dependencies**:
+    If/when this repository includes an Nx workspace (`package.json`, `nx.json`), install dependencies with:
     ```bash
     npm ci
     ```
 
 3.  **Run Applications**:
+    If/when this repository includes runnable apps, you can start them with:
     ```bash
-    nx serve web  # Frontend
-    nx serve api  # Backend
+    npx nx serve web  # Frontend
+    npx nx serve api  # Backend
     ```
 
 ## 🔒 Security & Secrets Policy
@@ -56,3 +58,24 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 2.  Fill out the **Pull Request Template** completely.
 3.  Self-review your code before requesting review.
 4.  Ensure all CI checks pass.
+
+## 🧰 Maintainers: GitHub Repository Settings Checklist
+
+Note: required status checks can only be selected after workflows exist and have run at least once.
+
+### Phase 1 (now)
+* Require a pull request before merging
+* Require approvals (recommended: at least 1)
+* Require review from Code Owners
+* Require conversation resolution before merging
+* Restrict force pushes
+* Restrict branch deletions
+
+### Phase 2 (later, once CI exists)
+* Add required status checks after CI workflows are added and have run at least once
+
+## ❓ Support / Questions
+
+Use GitHub Discussions for questions and support:
+
+* https://github.com/mneiter/aws-ecs-monorepo-foundation/discussions/new?category=q-a
